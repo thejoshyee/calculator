@@ -6,6 +6,9 @@ body {
 h1 {
     text-align: center;
     padding: 1em;
+    border-bottom: 1px black solid;
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
 /* Caculator Body */
