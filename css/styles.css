@@ -1,0 +1,67 @@
+/* Title */
+body {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    padding: 1em;
+}
+
+/* Caculator Body */
+
+.calculator {
+    display: grid;
+    height: 400px;  
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    border: 0.5em black solid;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+/* DISPLAY STYLES */
+
+.displayContainer {
+    display: flex;
+    background-color: rgb(221, 254, 197);
+    height: 50px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.displayText {
+    font-weight: bold;
+}
+
+/* Clear and Delete Buttons */
+
+.topButtonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.clear {
+    background-color: rgb(255, 165, 165);
+}
+
+.delete {
+    background-color: rgb(140, 205, 255);
+}
+
+/* Main Number Pad  */
+
+.buttonsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 65px;
+}
+
+.gridButton {
+    background-color:rgb(251, 239, 217);
+}
