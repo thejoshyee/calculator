@@ -93,7 +93,7 @@ footer {
 }
 
 .deleteButton {
-    word-wrap: break-word;
+    font-size: smaller;
 }
 
 }
