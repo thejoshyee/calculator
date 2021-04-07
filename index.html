@@ -5,41 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Calculator for All</title>
 </head>
 <body>
-<h1>The Calculator for All People</h1>
-    <div class="calculator">
-        <div class="displayContainer">
-            <div class="displayText">123</div>
+    <h1>Calculator for All</h1>
+    <div class="calculatorGrid">
+        <div class="outputContainer">
+            <div data-previous-operand class="previousOutput"></div>
+            <div data-current-operand class="currentOutput"></div>
         </div>
-        <div class="topButtonContainer">
-            <button class="clear">CLEAR</button>
-            <button class="delete">DELETE</button>
-        </div>
-        <div class="buttonsGrid">
-                <button class="seven gridButton">7</button>
-                <button class="eight gridButton">8</button>
-                <button class="nine gridButton">9</button>
-                <button class="divide gridButton">÷</button>
-
-                <button class="four gridButton">4</button>
-                <button class="five gridButton">5</button>
-                <button class="six gridButton">6</button>
-                <button class="multiply gridButton">x</button>
-
-                <button class="one gridButton">1</button>
-                <button class="two gridButton">2</button>
-                <button class="three gridButton">3</button>
-                <button class="subtract gridButton">-</button>
-
-                <button class="decimal gridButton">.</button>
-                <button class="zero gridButton">0</button>
-                <button class="equals gridButton">=</button>
-                <button class="add gridButton">+</button>
-        </div>
-        
+            <button data-all-clear class="twoSpaces AC">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>÷</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>*</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>+</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>-</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-equals class="twoSpaces">=</button>
     </div>
-<script src="js/app.js"></script>
 </body>
+<footer>created by <a class="joshyee" href="https://www.github.com/thejoshyee">Josh Yee</a></footer>
 </html>
