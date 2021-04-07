@@ -80,3 +80,16 @@ footer {
     color: #CAEEAE;
 
 }
+
+/* mobile screens */
+
+@media (max-width: 375px) {
+
+.calculatorGrid {
+    margin-top: -100px;
+    margin-bottom: -100px;
+    grid-template-columns: repeat(4, 85px);
+    grid-template-rows: minmax(85px, auto) repeat(5, 85px);
+}
+
+}
