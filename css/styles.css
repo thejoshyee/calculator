@@ -92,4 +92,8 @@ footer {
     grid-template-rows: minmax(85px, auto) repeat(5, 85px);
 }
 
+.deleteButton {
+    word-wrap: break-word;
+}
+
 }
