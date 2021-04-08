@@ -68,7 +68,7 @@ h1 {
 footer {
     font-style: italic;
     text-align: center;
-    padding-bottom: 1.5em;
+    padding-top: 2em;
 }
 
 .joshyee {
@@ -93,6 +93,10 @@ button.deleteButton {
     font-size: 1em;
     text-align: center;
     font-style: italic;
+}
+
+footer {
+    padding-top: 0;
 }
 
 }
