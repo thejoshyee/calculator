@@ -5,27 +5,38 @@ class Calculator {
         this.currentOperandTextElement = currentOperandTextElement
         this.clear()
     }
-
-    //All Clear Function
+    
+    //All Clear 
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
-    }
+    } 
+
     // Append the numbers to the screen
     appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.')) return;
-        this.currentOperand = this.currentOperand + number;
-
+        //check if number and current operand INCLUDES a decimal
+        if (number === '.' && this.currentOperand.includes('.')) return
+        // the current operand equals the current operand and number
+        this.currentOperand = this.currentOperand + number
     }
+
     // Delete key
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
-
     }
-    //Choose the Operation and store it in operation variable
+
+    //choose operation function
+    //After clicking the an operation, show the current operand onto the previous operand
+    //make current operand blank to finish off the final
     chooseOperation(operation) {
-        this.operation = operation
+        //check if current operand is blank to return it 
+        //check if previous operand is not blank, then compute it
+        if (this.currentOperand === '') return
+        if (this.previousOperand != '') {
+            this.compute()
+        }
+        this.operation = operation 
         this.previousOperand = this.currentOperand
         this.currentOperand = ''
     }
@@ -34,11 +45,13 @@ class Calculator {
     compute() {
         //final computation stored in this variable
         let computation
-        // parse float to decimals and whole numbers
+        // store previous operand and current operand in variables
+        // parseFloat for decimals
         const prev = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
         //check if not a number
         if (isNaN(prev) || isNaN(current)) return
+        //switch
         switch(this.operation) {
             case '+':
                 computation = prev + current
@@ -50,17 +63,16 @@ class Calculator {
                 computation = prev * current
                 break
             case '÷':
-                //check if numbers are dividing by 0 if so, return
                 if (prev === 0 || current === 0) return;
                 computation = prev / current
                 break
             default: 
-                return 
+                return
         }
-        // show the result of the computation to the current opperand field
+        // show the result of the computation to the current opperand
         this.currentOperand = computation
         // this stops the computing process if you keep clicking equals button
-        this.operation = undefined 
+        this.operation = undefined
         this.previousOperand = ''
     }
 
@@ -69,15 +81,15 @@ class Calculator {
         // the current operand will go in the inner text area of current operand field
         this.currentOperandTextElement.innerText = this.currentOperand
         // updates the previous display after the operator
+        // if the operation is not null update the prev operand text to show the previous operand and the operation
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operation}`
-        // if all clear, this clears the previous Operand Text element area to blank
+        // otherwise make it blank
         } else {
             this.previousOperandTextElement.innerText = ''
-        } 
+        }
     }
 }
-
 //Button Variables
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
@@ -90,6 +102,7 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 // new calculator
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
+
 // number buttons
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -97,6 +110,7 @@ numberButtons.forEach(button => {
         calculator.updateDisplay()
     })
 })
+
 
 // operation buttons
 operationButtons.forEach(button => {
@@ -106,17 +120,20 @@ operationButtons.forEach(button => {
     })
 })
 
-//equals button
+
+// equals button
 equalsButton.addEventListener('click', () => {
     calculator.compute()
     calculator.updateDisplay()
 })
+
 
 //ac button
 allClearButton.addEventListener('click', () => {
     calculator.clear()
     calculator.updateDisplay()
 })
+
 
 //delete button
 deleteButton.addEventListener('click', () => {
