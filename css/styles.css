@@ -94,7 +94,7 @@ footer {
 }
 
 button.deleteButton {
-    font-size: 8px;
+    font-size: 1em;
     text-align: center;
     font-style: italic;
 }
